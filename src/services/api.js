@@ -75,8 +75,8 @@ console.log('  Function API URL:', functionApi.defaults.baseURL);
 
 export const contentFilterService = {
   filterComment: (comment) => {
-    if (functionApi.defaults.baseURL.includes('<YOUR_FUNCTION_APP_NAME>')) {
-      console.error('❌ Please replace <YOUR_FUNCTION_APP_NAME> with your actual Function App name in api.js');
+    if (functionApi.defaults.baseURL.includes('mangkorn-content-filter')) {
+      console.error('❌ Please replace mangkorn-content-filter with your actual Function App name in api.js');
       return Promise.reject(new Error('Function API URL not configured'));
     }
     return functionApi.post('/filter_comment', { comment }).then(res => res.data);
